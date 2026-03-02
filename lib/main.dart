@@ -46,15 +46,19 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
 // halaman katalog
 class MyCatalog extends StatelessWidget {
   const MyCatalog({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final products = ['Nasi Goreng', 'Sate Ayam',
-      'Es Teh', 'Ayam Bakar', 'Kopi'];
+    final products = [
+      'Nasi Goreng',
+      'Sate Ayam',
+      'Es Teh',
+      'Ayam Bakar',
+      'Kopi',
+    ];
 
     return Scaffold(
       appBar: AppBar(
@@ -75,6 +79,33 @@ class MyCatalog extends StatelessWidget {
           );
         },
       ),
+    );
+  }
+}
+
+//widget tombol tambah
+class AddButton extends StatelessWidget {
+  final String item;
+  const AddButton({required this.item, super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    //context.select mantau apa si item udh di keranjang
+    final isInCart = context.select<CartModel, bool>(
+      (cart) => cart.items.contains(item),
+    );
+
+    return TextButton(
+      onPressed: isInCart
+          ? null
+          : () {
+              //context.read digunakan untuk manggil fungsi tanpa
+              // mendengarkan perubahan
+              context.read<CartModel>().add(item);
+            },
+      child: isInCart
+          ? const Icon(Icons.check, color: Colors.green)
+          : const Text('TAMBAH'),
     );
   }
 }
