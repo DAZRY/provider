@@ -2,6 +2,7 @@
 // Setelah refactor: dipindah ke file terpisah
 
 import 'package:flutter/material.dart';
+import 'package:provider_app/features/cart/presentation/pages/cart_page.dart';
 import 'package:provider_app/features/cart/presentation/pages/catalog_page.dart';
 
 class AppRouter {

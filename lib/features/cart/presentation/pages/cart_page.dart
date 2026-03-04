@@ -1,11 +1,10 @@
-import 'package:catalogue/features/cart/domain/entities/product.dart';
-import 'package:catalogue/features/cart/presentation/providers/cart_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:provider_app/features/cart/presentation/providers/cart_provider.dart';
 
 // Halaman Keranjang
-class MyCart extends StatelessWidget {
-  const MyCart({super.key});
+class CartPage extends StatelessWidget {
+  const CartPage({super.key});
 
   @override
   Widget build(BuildContext context) {

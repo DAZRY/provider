@@ -13,8 +13,11 @@ class CartRepositoryImpl implements CartRepository {
   void addItem(Product product) => _items.add(product);
 
   @override
+  @override
+  bool isItemInCart(String productId) => _items.any((p) => p.id == productId);
 
   @override
-  bool isItemInCart(String productId) => 
-  _items.any((p) => p.id == productId);
+  void removeAllItems() {
+    // TODO: implement removeAllItems
+  }
 }
