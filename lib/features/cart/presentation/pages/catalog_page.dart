@@ -1,3 +1,7 @@
+import 'package:flutter/material.dart';
+import 'package:provider_app/features/cart/domain/entities/product.dart';
+import 'package:provider_app/features/cart/presentation/widgets/add_button_widget.dart';
+
 class CatalogPage extends StatelessWidget {
   const CatalogPage({super.key});
   static final List<Product> _products = [
